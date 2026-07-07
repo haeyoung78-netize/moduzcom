@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", "Pretendard", "Noto Sans KR", "Malgun Gothic", "Inter", sans-serif;
+  --font-body: "Hanken Grotesk", "Pretendard", "Noto Sans KR", "Malgun Gothic", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary: #060607;
+  --color-secondary: #7d5700;
+  --color-gold: #7d5700;
+  --color-surface: #f9f9f7;
+  --color-surface-container: #eeeeec;
+  --color-surface-container-high: #e8e8e6;
+  --color-surface-container-low: #f4f4f2;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-highest: #e2e3e1;
+  --color-on-surface: #1a1c1b;
+  --color-on-surface-variant: #444748;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(231, 231, 231, 0.5);
+}
+
+.thread-knowledge {
+  position: relative;
+}
+
+.thread-knowledge::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #D9A441;
+}
+
+.quote-accent {
+  border-left: 4px solid #7d5700;
+}
+
+/* Scroll Indicators and animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%) translateX(-50%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: translateY(0) translateX(-50%);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce-scroll {
+  animation: bounce 1s infinite;
+}
+
